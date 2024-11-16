@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #282c34;
+            color: #fff;
+        }
+
+        #clock {
+            font-size: 3rem;
+            font-weight: bold;
+            padding: 20px 40px;
+            border: 10px solid #61dafb;
+            border-radius: 15px;
+            background-color: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #clock:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 25px rgba(97, 175, 251, 0.8);
+        }
+
+        /* Adding a glow effect to the clock text */
+        #clock {
+            text-shadow: 0 0 10px #61dafb, 0 0 20px #61dafb, 0 0 30px #61dafb;
+        }
+
+        /* Responsive Design: Adjust font size and padding for smaller screens */
+        @media (max-width: 768px) {
+            #clock {
+                font-size: 2.5rem;
+                padding: 15px 30px;
+                border-width: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #clock {
+                font-size: 2rem;
+                padding: 10px 20px;
+                border-width: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="clock"></div>
+
+    <script>
+        const clock = document.getElementById('clock');
+        setInterval(function(){
+            let date = new Date();
+            clock.innerHTML = date.toLocaleTimeString();
+        }, 1000);
+    </script>
+</body>
+</html>
